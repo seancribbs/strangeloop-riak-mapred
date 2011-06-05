@@ -22,8 +22,7 @@
     <script type="text/javascript">
 
     var map1 = function(object){
-      var list = object.values[0].split("\n")
-        .sort();
+      var list = object.values[0].split("\n").sort();
       var hashList = list.reduce(
         function(r, name){
           r[name] = 1; return r;
@@ -36,8 +35,7 @@
     };
  
     var map2 = function(object, myList){
-      var list = object.values[0].split("\n")
-        .sort();
+      var list = object.values[0].split("\n").sort();
       var count = list.reduce(
         function(counter, name){
           if(myList[name])
@@ -50,7 +48,7 @@
     };
 
     var reduce1 = function(values){
-      return values.sort(function(a,b){
+      return Riak.filterNotFound(values).sort(function(a,b){
         // Use < for descending order
         return a.count < b.count;
       });

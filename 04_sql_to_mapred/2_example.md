@@ -68,10 +68,11 @@
 
     @@@ javascript
     function(values){
-      return values.sort(function(a,b){
-        // Use < for descending order
-        return a.count < b.count;
-      });
+      return Riak.filterNotFound(values).sort(
+        function(a,b){
+          // Use < for descending order
+          return a.count < b.count;
+        });
     }
 
 !SLIDE
