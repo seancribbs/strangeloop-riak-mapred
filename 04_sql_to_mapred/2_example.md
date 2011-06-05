@@ -88,4 +88,7 @@
 !SLIDE
 # Take this Job and Run It
 
-<!-- insert submission code here -->
+<iframe
+src="http://localhost:8098/riak/bbuzz/sql-to-mapred-example"
+width="100%" height="575"></iframe>
+

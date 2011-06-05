@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Query Example</title>
+    <link rel="stylesheet" href="demo.css" />
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>
+          <textarea rows="20" cols="50" id="job">}</textarea>
+        </td>
+        <td>
+          <button id="run">&rarr;</button><br/>
+          <img id="spinner" src="spinner.gif" style="display:none" />
+        </td>
+        <td>
+          <textarea rows="20" cols="50" id="results"></textarea>
+        </td>
+      </tr>
+    </table>
+    <script type="text/javascript">
+      window.job = {
+  "inputs":[["people","seancribbs"],
+            ["people","roidrage"]],
+  "query":[{"map":{
+            "name":"Riak.mapValuesJson",
+            "language":"javascript",
+            "keep":true
+           }}]};
+    </script>
+    <script src="jquery.min.js"></script>
+    <script src="json2.js"></script>
+    <script src="demo.js"></script>
+  </body>
+</html>

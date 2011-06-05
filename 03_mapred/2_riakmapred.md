@@ -54,32 +54,8 @@
                }}]
     }
 
-!SLIDE simple-query-results
+!SLIDE
 # Results
-<script type="text/javascript">
-(function($){
-  $('.simple-query-results').bind('showoff:show',function(){
-    var $code = $(this).find('code');
-    var job = {
-      "inputs":[["people","seancribbs"],
-                ["people","roidrage"]],
-      "query":[{"map":{
-                  "name":"Riak.mapValuesJson",
-                  "language":"javascript",
-                  "keep":true
-               }}]
-    };
-    /* $.ajax({
-      url: '/mapred',
-      type: 'POST',
-      data: JSON.stringify(job),
-      success: function(req){
-        $code.text(JSON.stringify(JSON.parse(req.responseText), null,"  "));
-        sh_highlightElement($code.parent(), sh_languages['javascript']);
-      }
-    }); */
-  });
-})(jQuery);
-</script>
 
-    @@@ javascript
+<iframe src="http://localhost:8098/riak/bbuzz/simple-query-results"
+width="100%" height="575"></iframe>
