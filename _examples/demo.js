@@ -1,4 +1,5 @@
-(function($){
+window.$ = window.$ || jQuery;
+$(function(){
   $('#job').text(JSON.stringify(window.job, null, '  '));
   $('#run').click(function(){
     $.ajax({
@@ -14,4 +15,4 @@
       }
     });
   });
-})(jQuery);
+});

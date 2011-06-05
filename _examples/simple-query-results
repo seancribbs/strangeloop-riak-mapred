@@ -8,7 +8,7 @@
     <table>
       <tr>
         <td>
-          <textarea rows="20" cols="50" id="job">}</textarea>
+          <textarea rows="20" cols="50" id="job"></textarea>
         </td>
         <td>
           <button id="run">&rarr;</button><br/>
@@ -19,6 +19,9 @@
         </td>
       </tr>
     </table>
+    <script src="jquery.min.js"></script>
+    <script src="json2.js"></script>
+    <script src="demo.js"></script>
     <script type="text/javascript">
       window.job = {
   "inputs":[["people","seancribbs"],
@@ -29,8 +32,5 @@
             "keep":true
            }}]};
     </script>
-    <script src="jquery.min.js"></script>
-    <script src="json2.js"></script>
-    <script src="demo.js"></script>
   </body>
 </html>

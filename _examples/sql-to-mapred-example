@@ -19,10 +19,13 @@
         </td>
       </tr>
     </table>
+    <script src="jquery.min.js"></script>
+    <script src="json2.js"></script>
+    <script src="demo.js"></script>
     <script type="text/javascript">
 
     var map1 = function(object){
-      var list = object.values[0].split("\n").sort();
+      var list = Riak.mapValues(object)[0].split("\n").sort();
       var hashList = list.reduce(
         function(r, name){
           r[name] = 1; return r;
@@ -35,7 +38,7 @@
     };
  
     var map2 = function(object, myList){
-      var list = object.values[0].split("\n").sort();
+      var list = Riak.mapValues(object)[0].split("\n").sort();
       var count = list.reduce(
         function(counter, name){
           if(myList[name])
@@ -79,8 +82,5 @@
       "timeout":60000
     };
     </script>
-    <script src="jquery.min.js"></script>
-    <script src="json2.js"></script>
-    <script src="demo.js"></script>
   </body>
 </html>

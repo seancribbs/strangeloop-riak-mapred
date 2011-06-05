@@ -29,8 +29,8 @@
 
     @@@ javascript
     function(object){
-      var list = object.values[0].split("\n")
-                   .sort();
+      var list = Riak.mapValues(object)[0]
+          .split("\n").sort();
       var hashList = list.reduce(
         function(r, name){
           r[name] = 1; return r;
@@ -48,8 +48,8 @@
 
     @@@ javascript
     function(object, myList){
-      var list = object.values[0].split("\n")
-                   .sort();
+      var list = Riak.mapValues(object)[0]
+          .split("\n").sort();
       var count = list.reduce(
         function(counter, name){
           if(myList[name])
