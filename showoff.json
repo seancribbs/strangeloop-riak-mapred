@@ -1,0 +1,10 @@
+{ 
+    "name": "Wrap Your SQL Head Around Riak MapReduce", 
+    "sections": [ 
+        {"section":"01_introduction"},
+        {"section":"02_riak"},
+        {"section":"03_mapred"},
+        {"section":"04_sql_to_mapred"},
+        {"section":"05_conclusion"}
+    ]
+}

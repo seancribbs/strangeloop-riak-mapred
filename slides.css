@@ -1,0 +1,25 @@
+.content {
+   font-family: "Century Gothic", Helvetica, sans-serif;
+}
+
+.content h1 { 
+   font-weight: bold 
+}
+
+.content a, .content a:visited, .content a:hover { color: black }
+
+img {
+  vertical-align: middle
+}
+
+.content.title h1 {
+   background-color: orange;
+   margin-right: -10px;
+}
+
+.content.section h1 {   
+   background-color: orange;
+   padding: 0.5em inherit;
+   margin-right: -10px;
+}
+
