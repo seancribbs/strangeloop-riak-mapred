@@ -1,7 +1,5 @@
 source :rubygems
-
-# gem 'rmagick'
-# gem 'pdfkit'
-gem 'bundler'
+gem 'bluecloth'
+gem 'nokogiri'
 gem 'showoff'
-
+gem 'gli'
