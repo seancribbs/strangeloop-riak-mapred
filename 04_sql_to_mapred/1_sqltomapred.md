@@ -133,7 +133,7 @@
 
     @@@ javascript
     function(values, length){
-      return values.slice(0, length - 1);
+      return values.slice(0, length);
     }
     
     Riak.reduceLimit
