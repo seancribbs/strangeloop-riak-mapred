@@ -23,7 +23,7 @@
     <script src="json2.js"></script>
     <script src="demo.js"></script>
     <script type="text/javascript">
-
+    (function(){
     var map1 = function(object){
       var list = Riak.mapValues(object)[0].split("\n").sort();
       var hashList = list.reduce(
@@ -52,9 +52,8 @@
 
     var reduce1 = function(values){
       return Riak.filterNotFound(values).sort(function(a,b){
-        // Use < for descending order
-        return a.count < b.count;
-      });
+        return (a.count > b.count) ? -1 : 1;
+      }).slice(0,5);
     };
      
     window.job = {
@@ -71,16 +70,9 @@
                {"reduce":{
                  "source":reduce1.toString(),
                  "language":"javascript"
-               }},
-               {"reduce":{
-                 "name":"Riak.reduceLimit",
-                 "language":"javascript",
-                 "arg": 5,
-                 "keep":true
                }}
-              ],
-      "timeout":60000
-    };
+              ]
+    };})();
     </script>
   </body>
 </html>

@@ -62,29 +62,16 @@
     }
 
 !SLIDE
-# Sort the List Descending
-# by Count
+# Sort Descending and Limit
 ## **Reduce**
 
     @@@ javascript
     function(values){
       return Riak.filterNotFound(values).sort(
         function(a,b){
-          // Use < for descending order
-          return a.count < b.count;
-        });
+          return (a.count > b.count) ? -1 : 1;
+        }).slice(0,5);
     }
-
-!SLIDE
-# Limit to the Top 5
-## **Reduce**
-
-    @@@ javascript
-    {"reduce":{
-      "name":"Riak.reduceLimit",
-      "arg":5,
-      "keep":true
-    }}
 
 !SLIDE
 # Take this Job and Run It

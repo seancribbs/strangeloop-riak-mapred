@@ -25,7 +25,7 @@
     <script type="text/javascript">
       window.job = {
   "inputs":[["people","seancribbs"],
-            ["people","roidrage"]],
+            ["people","pharkmillups"]],
   "query":[{"map":{
             "name":"Riak.mapValuesJson",
             "language":"javascript",

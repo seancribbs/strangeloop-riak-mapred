@@ -31,4 +31,4 @@
 
 [sean@basho.com](mailto:sean@basho.com) ::
 [@seancribbs](http://twitter.com/seancribbs) ::
-[github.com/seancribbs/bbuzz-riak-mapred](https://github.com/seancribbs/bbuzz-riak-mapred)
+[github.com/seancribbs/strangeloop-riak-mapred](https://github.com/seancribbs/strangeloop-riak-mapred)

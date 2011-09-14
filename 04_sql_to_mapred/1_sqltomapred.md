@@ -1,6 +1,13 @@
 !SLIDE section
 # From SQL to MapReduce
 
+!SLIDE bullets incremental
+# General Considerations
+
+* More denormalized
+* Design for query up-front
+* Duplication of data is OK
+
 !SLIDE
 # SELECT \<fields\>
 
@@ -21,7 +28,7 @@
 !SLIDE
 # WHERE \<conditions\>
 
-!SLIDE bullets incremental
+!SLIDE
 # WHERE \<conditions\>
 ## **Map** (filter)
 
@@ -35,7 +42,20 @@
     }
 
     Riak.mapByFields, {"year":2011}
-    
+
+!SLIDE
+# WHERE \<conditions\>
+## **Index Lookup**
+
+    @@@ javascript
+    "inputs":{
+      "bucket":"logs",
+      "index":"year_int",
+      "key":2011
+    }
+    // Only equality and ranges in 1.0
+    // "key" or "start","end"
+
 !SLIDE
 # WHERE \<conditions\>
 ## **Key-filters**
@@ -59,6 +79,7 @@
       "function":"mapred_search",
       "arg":["logs", "year:2011"]
     }
+    // Most Lucene-syntax features supported
 
 !SLIDE
 # JOIN
@@ -67,8 +88,7 @@
 # JOIN
 ## **Map or Link, Map** (traverse)
 
-    @@@ javascript
-    
+    @@@ javascript    
     function(object){
       // Extract some data from the object
       // Set bucket, key, keyData vars
@@ -77,6 +97,16 @@
     
     {"link":{"tag":"parent"}}
 
+!SLIDE
+# JOIN
+## **Index Lookup, Map**
+
+    @@@ javascript
+    "inputs":{
+      "bucket":"transactions",
+      "index":"company_bin",
+      "key":"basho"
+    }
 
 !SLIDE
 # ORDER BY \<fields\>
@@ -88,7 +118,7 @@
     @@@ javascript
     function(values, field){
       return values.sort(function(a,b){
-        return a[field] > b[field];
+        return (a[field] > b[field]) ? 1 : -1;
       });
     }
     

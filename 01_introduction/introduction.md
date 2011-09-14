@@ -8,13 +8,13 @@
 
 [@seancribbs](http://twitter.com/seancribbs) ::
 [github.com/seancribbs](https://github.com/seancribbs) :: 
-Berlin Buzzwords 6 June 2011
+Strange Loop 19 September 2011
 
 !SLIDE bullets incremental
 
+* ![Sean](sean.jpg) ![Basho](basho.jpg)
+
 # Who Am I?
 
-* ![Sean](sean.jpg) ![Basho](basho.jpg)
 * <img src="ruby.png" style="width: 150px; height: 150px"/>
-  ![Erlang](erlang-logo.png) ![jQuery](jquery.png)
-  <img src="node.png" style="background-color: #22252A" />
+  ![Erlang](erlang-logo.png) ![JavaScript](jslogo.png)

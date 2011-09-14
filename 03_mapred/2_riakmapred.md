@@ -4,8 +4,8 @@
 !SLIDE bullets incremental
 # Riak MapReduce is NOT...
 
-* for batch-processing (yet)
-* for building indexes
+* for batch-processing
+* for building views/indexes
 * for crunching your entire dataset
 * limited to one of each function
 
@@ -17,12 +17,12 @@
 * any sequence of Map and Reduce functions
 
 !SLIDE bullets incremental
-# Riak MapReduce Features
+# Features
 
 * JavaScript or Erlang funs
+* Search, 2I inputs
 * "Link" phases
 * Key-Filters
-* Input generators (incl. Search)
 * Key-specific data
 * Phase-specific data
 
@@ -32,8 +32,15 @@
 * Values are opaque
 * Map phases take input lists
 * Erlang > JavaScript
-* Built-ins vs. Source
-* Always re-reduce
+* Built-ins > Source
+* Reduce funs reapplied
+
+!SLIDE bullets incremental
+# Hidden Plumbing
+
+* MapReduce in 1.0 runs atop **Riak Pipe**
+* General distributed processing framework
+* Mostly invisible to clients
 
 !SLIDE
 # A Simple Query
@@ -46,7 +53,7 @@
 
     {
       "inputs":[["people","seancribbs"],
-                ["people","roidrage"]],
+                ["people","pharkmillups"]],
       "query":[{"map":{
                   "name":"Riak.mapValuesJson",
                   "language":"javascript",

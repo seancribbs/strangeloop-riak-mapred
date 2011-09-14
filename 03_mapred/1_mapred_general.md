@@ -19,7 +19,7 @@
 !SLIDE bullets incremental
 # Why MapReduce?
 
-* Translates well to networks
+* Easy distributed processing
 * Data locality
 * Scales up and down
 * "It's just code."

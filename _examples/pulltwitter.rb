@@ -14,7 +14,7 @@ Twitter.configure do |c|
   c.adapter = :typhoeus
 end
 
-MAX_USERS = 100
+MAX_USERS = 1000
 if File.exist?("friends/seancribbs")
   users = File.read("friends/seancribbs").split("\n")
   count = Dir['friends/*'].size
@@ -38,7 +38,7 @@ while users.any? && count < MAX_USERS
           next
         end
         ul.each do |u|
-          users << u['screen_name']
+          # users << u['screen_name']
           f.puts u['screen_name']
         end
       end

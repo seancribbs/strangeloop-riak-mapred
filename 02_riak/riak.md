@@ -38,7 +38,9 @@
 
 !SLIDE bullets incremental
 
-# Two ways to query Riak
+# <del style="color:gray">Two</del> Four ways to query
 
 * Link traversal ("walking")
-* MapReduce
+* Full-text search
+* Secondary indexes
+* **MapReduce**
